@@ -9,15 +9,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="400" prefWidth="600" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"> <!-- Schwarzer Hintergrund -->
 
     <!-- TOP BAR -->
     <top>
         <HBox alignment="CENTER_LEFT" spacing="10" BorderPane.alignment="CENTER">
             <children>
-                <Label text="Easy">
+                <Label style="-fx-text-fill: white; -fx-font-size: 18px;" text="Easy"> <!-- Weiße Schrift -->
                     <padding>
                         <Insets left="10" />
                     </padding>
@@ -25,11 +24,12 @@
 
                 <Region HBox.hgrow="ALWAYS" />
 
-                <Label alignment="CENTER_RIGHT" text="Highscore:">
+                <Label alignment="CENTER_RIGHT" style="-fx-text-fill: white; -fx-font-size: 18px;" text="Highscore:"> <!-- Weiße Schrift -->
                     <padding>
                         <Insets right="10" />
                     </padding>
                 </Label>
+                <Label fx:id="Highscore_Points" style="-fx-text-fill: white; -fx-font-size: 18px;" text="Highscore_Points" /> <!-- Weiße Schrift -->
             </children>
         </HBox>
     </top>
@@ -38,10 +38,7 @@
     <center>
         <VBox alignment="CENTER" spacing="20" BorderPane.alignment="CENTER">
             <children>
-                <Label alignment="CENTER" text="WHAT FLAG IS THIS?">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font></Label>
+                <Label alignment="CENTER" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;" text="WHAT FLAG IS THIS?" />
                 <ImageView fitHeight="250" preserveRatio="true">
                     <image>
                         <Image url="@../flags/example_flag.png" />
@@ -57,22 +54,22 @@
             <children>
                 <!-- Left column -->
                 <VBox spacing="10">
-                    <ToggleButton fx:id="Antwort_A" mnemonicParsing="false" prefWidth="160" text="Antwort A" />
-                    <ToggleButton fx:id="Antwort_C" mnemonicParsing="false" prefWidth="160" text="Antwort C" />
+                    <ToggleButton fx:id="Antwort_A" mnemonicParsing="false" prefHeight="100" prefWidth="400" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Antwort A" />
+                    <ToggleButton fx:id="Antwort_C" mnemonicParsing="false" prefHeight="100" prefWidth="400" style="-fx-background-color: yellow; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Antwort C" />
                 </VBox>
 
                 <!-- Right column -->
                 <VBox spacing="10">
-                    <ToggleButton fx:id="Antwort_B" mnemonicParsing="false" prefWidth="160" text="Antwort B" />
-                    <ToggleButton fx:id="Antwort_D" mnemonicParsing="false" prefWidth="160" text="Antwort D" />
+                    <ToggleButton fx:id="Antwort_B" mnemonicParsing="false" prefHeight="100" prefWidth="400" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Antwort B" />
+                    <ToggleButton fx:id="Antwort_D" mnemonicParsing="false" prefHeight="100" prefWidth="400" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Antwort D" />
                 </VBox>
             </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <padding>
-            <Insets bottom="10.0" />
-         </padding>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <padding>
+                <Insets bottom="10.0" />
+            </padding>
         </HBox>
     </bottom>
 </BorderPane>
