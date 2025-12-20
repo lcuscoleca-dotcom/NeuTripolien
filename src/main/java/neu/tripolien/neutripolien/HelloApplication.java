@@ -21,7 +21,7 @@ public class HelloApplication extends Application {
 
         // Stage initial auf Scene 1 setzen
         stage.setTitle("Neu Tripolien!");
-        stage.setScene(scene1);
+        stage.setScene(scene2);
         stage.show();
 
     }
