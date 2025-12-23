@@ -1,0 +1,17 @@
+.answer-box {
+    -fx-background-color: #1b263b;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-cursor: hand;
+}
+
+/* Hover: gleiche Farbe, nur hervorgehoben */
+.answer-box:hover {
+    -fx-border-color: #fca311;
+    -fx-border-width: 2;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}

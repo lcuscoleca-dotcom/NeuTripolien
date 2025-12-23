@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.*?>
+
+<BorderPane prefWidth="900"
+            prefHeight="600"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- ================= BACKGROUND ================= -->
+    <style>
+        -fx-background-color: linear-gradient(to bottom, #0d1b2a, #081020);
+    </style>
+
+    <!-- ================= TOP ================= -->
+    <top>
+        <HBox alignment="CENTER" style="-fx-padding: 30;">
+            <Label text="MAIN MENU"
+                   style="-fx-text-fill: #e0e1dd;
+                          -fx-font-size: 40px;
+                          -fx-font-weight: bold;
+                          -fx-effect: dropshadow(gaussian, #fca311, 12, 0.5, 0, 0);" />
+        </HBox>
+    </top>
+
+    <!-- ================= CENTER ================= -->
+    <center>
+        <VBox alignment="CENTER" spacing="40">
+
+            <!-- SETTINGS CARD -->
+            <VBox spacing="28"
+                  alignment="CENTER"
+                  style="-fx-background-color: linear-gradient(to bottom, #1b263b, #162030);
+                         -fx-padding: 36;
+                         -fx-background-radius: 18;
+                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 12, 0.5, 0, 4);
+                         -fx-min-width: 480;">
+
+                <Label text="Settings ⚙"
+                       style="-fx-text-fill: #e0e1dd;
+                              -fx-font-size: 30px;
+                              -fx-font-weight: bold;" />
+
+                <!-- Difficulty -->
+                <HBox spacing="24" alignment="CENTER">
+                    <Label text="Difficulty 🏁"
+                           style="-fx-text-fill: #778da9; -fx-font-size: 22px;"
+                           prefWidth="180"/>
+                    <ChoiceBox fx:id="difficultyChoiceBox"
+                               prefWidth="220"/>
+                </HBox>
+
+                <!-- Questions -->
+                <HBox spacing="24" alignment="CENTER">
+                    <Label text="Questions ❓"
+                           style="-fx-text-fill: #778da9; -fx-font-size: 22px;"
+                           prefWidth="180"/>
+                    <ChoiceBox fx:id="questionCountChoiceBox"
+                               prefWidth="220"/>
+                </HBox>
+
+                <!-- Time Limit -->
+                <HBox spacing="24" alignment="CENTER">
+                    <Label text="Time Limit ⏱"
+                           style="-fx-text-fill: #778da9; -fx-font-size: 22px;"
+                           prefWidth="180"/>
+                    <ChoiceBox fx:id="timeLimitChoiceBox"
+                               prefWidth="220"/>
+                </HBox>
+
+                <!-- Sound -->
+                <HBox spacing="24" alignment="CENTER">
+                    <Label text="Sound 🔊"
+                           style="-fx-text-fill: #778da9; -fx-font-size: 22px;"
+                           prefWidth="180"/>
+                    <CheckBox fx:id="soundCheckBox"
+                              text="Enabled"
+                              selected="true"
+                              prefWidth="220"
+                              style="-fx-text-fill: #e0e1dd; -fx-font-size: 18px;"/>
+                </HBox>
+
+                <!-- Hints -->
+                <HBox spacing="24" alignment="CENTER">
+                    <Label text="Hints 💡"
+                           style="-fx-text-fill: #778da9; -fx-font-size: 22px;"
+                           prefWidth="180"/>
+                    <CheckBox fx:id="hintsCheckBox"
+                              text="Allow hints"
+                              selected="true"
+                              prefWidth="220"
+                              style="-fx-text-fill: #e0e1dd; -fx-font-size: 18px;"/>
+                </HBox>
+
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- ================= BOTTOM ================= -->
+    <bottom>
+        <VBox alignment="CENTER" spacing="22"
+              style="-fx-padding: 30;">
+
+            <!-- START -->
+            <Button text="Start Game ▶"
+                    fx:id="startButton"
+                    prefWidth="340"
+                    prefHeight="90"
+                    style="-fx-font-size: 24px;
+                           -fx-font-weight: bold;
+                           -fx-background-color: #fca311;
+                           -fx-text-fill: #0d1b2a;
+                           -fx-background-radius: 20;">
+                <effect>
+                    <DropShadow color="#fca311" radius="12"/>
+                </effect>
+            </Button>
+
+            <!-- EXIT -->
+            <Button text="Exit ❌"
+                    fx:id="exitButton"
+                    prefWidth="180"
+                    prefHeight="50"
+                    style="-fx-font-size: 16px;
+                           -fx-background-color: #1b263b;
+                           -fx-text-fill: #e0e1dd;
+                           -fx-background-radius: 16;">
+                <effect>
+                    <DropShadow color="rgba(0,0,0,0.5)" radius="8"/>
+                </effect>
+            </Button>
+        </VBox>
+    </bottom>
+
+</BorderPane>
