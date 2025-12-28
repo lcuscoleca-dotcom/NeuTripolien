@@ -6,6 +6,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/25"
             xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="neu.tripolien.neutripolien.WelcomeController"
             prefWidth="600" prefHeight="400"
             style="
                 -fx-background-image: url('/images/background.jpg');
@@ -63,6 +64,7 @@
             <!-- BUTTON -->
             <Button fx:id="startButton"
                     text="Start Quiz"
+                    onAction="#onStartClicked"
                     prefWidth="180"
                     prefHeight="45"
                     style="

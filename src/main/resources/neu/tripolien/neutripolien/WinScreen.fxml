@@ -5,6 +5,7 @@
 
 <BorderPane prefWidth="900"
             prefHeight="600"
+            fx:controller="neu.tripolien.neutripolien.WinscreenController"
             xmlns="http://javafx.com/javafx/25"
             xmlns:fx="http://javafx.com/fxml/1"
             style="-fx-background-color: #0d1b2a;">
@@ -75,6 +76,7 @@
               style="-fx-padding: 30;">
 
             <Button text="Play Again 🔄"
+                    onAction="#onMenuClicked"
                     prefWidth="260"
                     prefHeight="70"
                     style="-fx-font-size: 20px;
@@ -84,6 +86,7 @@
                            -fx-background-radius: 16;" />
 
             <Button text="Main Menu 🏠"
+                    onAction="#onMenuClicked"
                     prefWidth="220"
                     prefHeight="70"
                     style="-fx-font-size: 18px;

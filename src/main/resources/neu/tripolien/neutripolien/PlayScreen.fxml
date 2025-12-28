@@ -12,6 +12,7 @@
 
 <BorderPane prefWidth="900"
             prefHeight="600"
+            fx:controller="neu.tripolien.neutripolien.PlayscreenController"
             stylesheets="@quiz.css"
             xmlns="http://javafx.com/javafx/25"
             xmlns:fx="http://javafx.com/fxml/1"
@@ -111,12 +112,14 @@
                 <!-- LEFT COLUMN -->
                 <VBox spacing="20">
                     <Button text="Antwort A"
+                            onAction="#answerClicked"
                             prefWidth="300"
                             prefHeight="90"
                             styleClass="answer-box"
                             style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
 
                     <Button text="Antwort C"
+                            onAction="#answerClicked"
                             prefWidth="300"
                             prefHeight="90"
                             styleClass="answer-box"
@@ -126,12 +129,14 @@
                 <!-- RIGHT COLUMN -->
                 <VBox spacing="20">
                     <Button text="Antwort B"
+                            onAction="#answerClicked"
                             prefWidth="300"
                             prefHeight="90"
                             styleClass="answer-box"
                             style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
 
                     <Button text="Antwort D"
+                            onAction="#answerClicked"
                             prefWidth="300"
                             prefHeight="90"
                             styleClass="answer-box"

@@ -1,8 +1,11 @@
 package neu.tripolien.neutripolien;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 
 public class WelcomeController {
 
+    @FXML
+    private void onStartClicked() {
+        SceneManager.switchScene("MainMenuScreen.fxml");
+    }
 }
