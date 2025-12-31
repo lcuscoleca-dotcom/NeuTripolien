@@ -112,15 +112,17 @@
 
                 <!-- LEFT COLUMN -->
                 <VBox spacing="20">
-                    <Button text="Antwort A"
-                            onAction="#answerClicked"
+                    <Button fx:id="buttonA"
+                            text="Antwort A"
+                            onAction="#answerAClicked"
                             prefWidth="300"
                             prefHeight="90"
                             styleClass="answer-box"
                             style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
 
-                    <Button text="Antwort C"
-                            onAction="#answerClicked"
+                    <Button fx:id="buttonC"
+                            text="Antwort C"
+                            onAction="#answerCClicked"
                             prefWidth="300"
                             prefHeight="90"
                             styleClass="answer-box"
@@ -129,15 +131,17 @@
 
                 <!-- RIGHT COLUMN -->
                 <VBox spacing="20">
-                    <Button text="Antwort B"
-                            onAction="#answerClicked"
+                    <Button fx:id="buttonB"
+                            text="Antwort B"
+                            onAction="#answerBClicked"
                             prefWidth="300"
                             prefHeight="90"
                             styleClass="answer-box"
                             style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
 
-                    <Button text="Antwort D"
-                            onAction="#answerClicked"
+                    <Button fx:id="buttonD"
+                            text="Antwort D"
+                            onAction="#answerDClicked"
                             prefWidth="300"
                             prefHeight="90"
                             styleClass="answer-box"

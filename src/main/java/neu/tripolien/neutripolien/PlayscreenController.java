@@ -4,8 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
+import javafx.scene.control.Button;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -17,16 +19,45 @@ public class PlayscreenController {
     private Label Highscore_Points;
 
     @FXML
-    private void answerClicked() {
-        GameState.score += 100;
-        Highscore_Points.setText(String.valueOf(GameState.score));
+    private void answerAClicked() {
+        checkAnswer(buttonA.getText());
+    }
 
-        if (GameState.score >= 500) {
-            SceneManager.switchScene("WinScreen.fxml");
+    @FXML
+    private void answerBClicked() {
+        checkAnswer(buttonB.getText());
+    }
+
+    @FXML
+    private void answerCClicked() {
+        checkAnswer(buttonC.getText());
+    }
+
+    @FXML
+    private void answerDClicked() {
+        checkAnswer(buttonD.getText());
+    }
+
+    private void checkAnswer(String selectedCountry) {
+        // Ist die Antwort richtig?
+        if (selectedCountry.equals(currentCorrectFlag.getCountryName())) {
+            // RICHTIG!
+            GameState.score += 100;
+            Highscore_Points.setText(String.valueOf(GameState.score));
+
+            // Nächste Frage laden
+            loadNewQuestion();
+
+            // Wenn Score hoch genug → WinScreen
+            if (GameState.score >= 500) {
+                SceneManager.switchScene("WinScreen.fxml");
+            }
+        } else {
+            // FALSCH!
+            SceneManager.switchScene("Deathscreen.fxml");
         }
     }
 
-    // AB UNTEN GEHTS UM LISTE DER FLAGGE UND ZUFÄLLIG ANZEIGE
 
     @FXML
     private ImageView flagImageView;
@@ -35,8 +66,19 @@ public class PlayscreenController {
     private Random random = new Random();
 
     @FXML
-    public void initialize() {
-        System.out.println("Initialize wird aufgerufen!");
+    private Button buttonA;
+
+    @FXML
+    private Button buttonB;
+
+    @FXML
+    private Button buttonC;
+
+    @FXML
+    private Button buttonD;
+
+    @FXML
+    public void initialize() { // das initialisiert die Flaggen ins Pogramm
 
         flags = new ArrayList<>();
         flags.add(new Flags("Deutschland", "/neu/tripolien/flags/de.png"));
@@ -97,5 +139,28 @@ public class PlayscreenController {
         // Zeige die Flagge an
         Image image = new Image(getClass().getResourceAsStream(currentCorrectFlag.getImagePath()));
         flagImageView.setImage(image);
+
+        // Erstelle Liste mit 4 Antworten (1 richtig, 3 falsch)
+        List<Flags> answerOptions = new ArrayList<>();
+        answerOptions.add(currentCorrectFlag);  // Die richtige Antwort
+
+        // Füge 3 zufällige FALSCHE Antworten hinzu
+        while (answerOptions.size() < 4) {
+            Flags randomFlag = flags.get(random.nextInt(flags.size()));
+
+            // Ist diese Flagge schon in der Liste? Wenn nein, hinzufügen! Für keine doppelten Länder
+            if (!answerOptions.contains(randomFlag)) {
+                answerOptions.add(randomFlag);
+            }
+        }
+
+        // MISCHE die Antworten (damit die richtige nicht immer an Position 0 ist!)
+        Collections.shuffle(answerOptions);
+
+        // Setze die Ländernamen auf die Buttons
+        buttonA.setText(answerOptions.get(0).getCountryName()); // get: aus dem Array hol position 0
+        buttonB.setText(answerOptions.get(1).getCountryName());
+        buttonC.setText(answerOptions.get(2).getCountryName());
+        buttonD.setText(answerOptions.get(3).getCountryName());
     }
 }
