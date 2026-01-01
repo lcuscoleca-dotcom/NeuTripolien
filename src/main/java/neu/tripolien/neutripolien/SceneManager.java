@@ -1,6 +1,7 @@
 package neu.tripolien.neutripolien;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -12,12 +13,29 @@ public class SceneManager {
         stage = s;
     }
 
-    public static void switchScene(String fxml) {
+    // Erste Szene laden
+    public static Scene loadScene(String fxml) {
         try {
-            FXMLLoader loader = new FXMLLoader(
+            Parent root = FXMLLoader.load(
                     SceneManager.class.getResource(fxml)
             );
-            stage.setScene(new Scene(loader.load(), 900, 600));
+            return new Scene(root);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // Szenenwechsel OHNE Unterbrechung
+    public static void switchScene(String fxml) {
+        try {
+            Parent root = FXMLLoader.load(
+                    SceneManager.class.getResource(fxml)
+            );
+
+            // 🔥 Nur Root tauschen → absolut flackerfrei
+            stage.getScene().setRoot(root);
+
         } catch (Exception e) {
             e.printStackTrace();
         }

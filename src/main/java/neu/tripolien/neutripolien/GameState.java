@@ -2,11 +2,27 @@ package neu.tripolien.neutripolien;
 
 public class GameState {
 
-    public static int score = 0;
-    public static int lives = 3;
+    // SCORE & PROGRESS
+    public static int score;
+    public static int lives;
+    public static int currentQuestion;
+    public static int correctAnswers;
+
+    // SETTINGS
+    public static String difficulty = "Normal";
+    public static int questionCount = 10;
+    public static int timeLimit = 30;
+    public static boolean soundEnabled = true;
+    public static boolean hintsEnabled = true;
 
     public static void reset() {
         score = 0;
-        lives = 3;
+        lives = switch (difficulty) {
+            case "Easy" -> 5;
+            case "Hard" -> 2;
+            default -> 3;
+        };
+        currentQuestion = 0;
+        correctAnswers = 0;
     }
 }
