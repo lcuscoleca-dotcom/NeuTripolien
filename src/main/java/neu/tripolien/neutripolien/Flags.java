@@ -4,11 +4,14 @@ public class Flags {
 
     private String countryName;
     private String imagePath;
+    private String difficulty;
 
-    public Flags (String countryName, String imagePath) {
+    public Flags (String countryName, String imagePath, String difficulty) {
 
         this.countryName = countryName;
         this.imagePath = imagePath;
+        this.difficulty = difficulty;
+
 
     }
 
@@ -20,6 +23,11 @@ public class Flags {
     public String getImagePath() {
 
         return imagePath;
+    }
+
+    public String getDifficulty() {
+
+        return difficulty;
     }
 
 

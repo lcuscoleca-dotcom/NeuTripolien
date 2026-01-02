@@ -119,7 +119,7 @@
             </Button>
 
             <!-- EXIT -->
-            <Button text="Exit ❌"
+            <Button text="Exit Game ❌"
                     fx:id="exitButton"
                     onAction="#onExitClicked"
                     prefWidth="180"
