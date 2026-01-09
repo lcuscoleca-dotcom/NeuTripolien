@@ -6,9 +6,14 @@ import javafx.scene.control.Label;
 
 public class DeathscreenController {
 
-    @FXML private Label scoreLabel;
-    @FXML private Label answerLabel;
-    @FXML private Label difficultyLabel;
+    @FXML
+    private Label scoreLabel;
+    @FXML
+    private Label answerLabel;
+    @FXML
+    private Label difficultyLabel;
+    @FXML
+    private Label resultLabel;
 
     @FXML
     public void initialize() {
@@ -17,6 +22,13 @@ public class DeathscreenController {
                 GameState.correctAnswers + " / " + GameState.questionCount
         );
         difficultyLabel.setText(GameState.difficulty);
+
+        //Call username from GameState
+        String name = GameState.username;
+        if (name == null || name.isEmpty()) {
+            name = "You";
+        }
+        resultLabel.setText(name + " failed this round 😢");
     }
 
     @FXML
@@ -36,4 +48,5 @@ public class DeathscreenController {
         Platform.exit();
         System.exit(0);
     }
+
 }

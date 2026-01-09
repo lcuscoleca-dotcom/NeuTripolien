@@ -7,6 +7,7 @@ public class GameState {
     public static int lives;
     public static int currentQuestion;
     public static int correctAnswers;
+    public static String username;
 
     // SETTINGS
     public static String difficulty = "Normal";

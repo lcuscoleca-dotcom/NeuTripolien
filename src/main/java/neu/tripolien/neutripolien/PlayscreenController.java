@@ -403,7 +403,7 @@ public class PlayscreenController {
     }
 
     private void updateLives() {
-        livesLabel.setText("❤️".repeat(GameState.lives));
+        livesLabel.setText("♥".repeat(GameState.lives));
     }
 
 }

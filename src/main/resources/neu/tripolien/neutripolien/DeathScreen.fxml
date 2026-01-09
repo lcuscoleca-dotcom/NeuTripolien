@@ -1,85 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:controller="neu.tripolien.neutripolien.DeathscreenController"
-            xmlns="http://javafx.com/javafx/25"
-            xmlns:fx="http://javafx.com/fxml/1"
-            style="-fx-background-color: #0d1b2a;">
+<BorderPane style="-fx-background-color: #0d1b2a;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="neu.tripolien.neutripolien.DeathscreenController">
 
     <top>
         <HBox alignment="CENTER" style="-fx-padding: 20;">
-            <Label text="QUIZ OVER 💀"
-                   style="-fx-text-fill: #e0e1dd;
-                          -fx-font-size: 20px;
-                          -fx-font-weight: bold;" />
+            <Label style="-fx-text-fill: #e0e1dd;                           -fx-font-size: 20px;                           -fx-font-weight: bold;" text="QUIZ OVER 💀" />
         </HBox>
     </top>
 
     <center>
         <VBox alignment="CENTER" spacing="28">
 
-            <Label text="✖"
-                   style="-fx-text-fill: #ff4c4c;
-                          -fx-font-size: 64px;
-                          -fx-font-weight: bold;" />
+            <Label style="-fx-text-fill: #ff4c4c;                           -fx-font-size: 64px;                           -fx-font-weight: bold;" text="✖" />
 
-            <Label text="You failed this round 😢"
-                   style="-fx-text-fill: white;
-                          -fx-font-size: 38px;
-                          -fx-font-weight: bold;" />
+            <Label fx:id="resultLabel"
+                   style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;" />
 
-            <VBox spacing="14"
-                  alignment="CENTER"
-                  style="-fx-background-color: #1b263b;
-                         -fx-padding: 30;
-                         -fx-background-radius: 18;">
+            <VBox alignment="CENTER" spacing="14" style="-fx-background-color: #1b263b;                          -fx-padding: 30;                          -fx-background-radius: 18;">
 
-                <Label text="Difficulty"
-                       style="-fx-text-fill: #778da9;" />
-                <Label fx:id="difficultyLabel"
-                       style="-fx-text-fill: white;
-                              -fx-font-size: 18px;
-                              -fx-font-weight: bold;" />
+                <Label style="-fx-text-fill: #778da9;" text="Difficulty" />
+                <Label fx:id="difficultyLabel" style="-fx-text-fill: white;                               -fx-font-size: 18px;                               -fx-font-weight: bold;" />
 
-                <Label text="Correct Answers"
-                       style="-fx-text-fill: #778da9;" />
-                <Label fx:id="answerLabel"
-                       style="-fx-text-fill: #e0e1dd;
-                              -fx-font-size: 26px;
-                              -fx-font-weight: bold;" />
+                <Label style="-fx-text-fill: #778da9;" text="Correct Answers" />
+                <Label fx:id="answerLabel" style="-fx-text-fill: #e0e1dd;                               -fx-font-size: 26px;                               -fx-font-weight: bold;" />
 
-                <Label text="Score"
-                       style="-fx-text-fill: #778da9;" />
-                <Label fx:id="scoreLabel"
-                       style="-fx-text-fill: #fca311;
-                              -fx-font-size: 32px;
-                              -fx-font-weight: bold;" />
+                <Label style="-fx-text-fill: #778da9;" text="Score" />
+                <Label fx:id="scoreLabel" style="-fx-text-fill: #fca311;                               -fx-font-size: 32px;                               -fx-font-weight: bold;" />
             </VBox>
         </VBox>
     </center>
 
     <bottom>
         <HBox alignment="CENTER" spacing="40" style="-fx-padding: 30;">
-            <Button text="Retry 🔄"
-                    onAction="#onRetryClicked"
-                    prefWidth="260"
-                    prefHeight="70"
-                    style="-fx-font-size: 20px;
-                           -fx-font-weight: bold;
-                           -fx-background-color: #fca311;
-                           -fx-text-fill: #0d1b2a;
-                           -fx-background-radius: 16;" />
+            <Button onAction="#onRetryClicked" prefHeight="70" prefWidth="260" style="-fx-font-size: 20px;                            -fx-font-weight: bold;                            -fx-background-color: #fca311;                            -fx-text-fill: #0d1b2a;                            -fx-background-radius: 16;" text="Retry 🔄" />
 
-            <Button text="Main Menu 🏠"
-                    onAction="#onMenuClicked"
-                    prefWidth="220"
-                    prefHeight="70"
-                    style="-fx-font-size: 18px;
-                           -fx-background-color: #1b263b;
-                           -fx-text-fill: #e0e1dd;
-                           -fx-background-radius: 16;" />
+            <Button onAction="#onMenuClicked" prefHeight="70" prefWidth="220" style="-fx-font-size: 18px;                            -fx-background-color: #1b263b;                            -fx-text-fill: #e0e1dd;                            -fx-background-radius: 16;" text="Main Menu 🏠" />
         </HBox>
     </bottom>
 

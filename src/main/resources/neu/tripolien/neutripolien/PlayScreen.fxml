@@ -1,145 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:controller="neu.tripolien.neutripolien.PlayscreenController"
-            stylesheets="@quiz.css"
-            xmlns="http://javafx.com/javafx/25"
-            xmlns:fx="http://javafx.com/fxml/1"
-            style="-fx-background-color: #0d1b2a;">
+<BorderPane style="-fx-background-color: #0d1b2a;" stylesheets="@quiz.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="neu.tripolien.neutripolien.PlayscreenController">
 
     <!-- ================= TOP BAR ================= -->
     <top>
-        <HBox alignment="CENTER_LEFT"
-              spacing="12"
-              style="-fx-padding: 15;">
+        <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-padding: 15;">
 
             <!-- Difficulty -->
-            <Label fx:id="difficultyLabel"
-                   text="Normal"
-                   style="-fx-text-fill: #e0e1dd;
-                          -fx-font-size: 18px;
-                          -fx-font-weight: bold;" />
+            <Label fx:id="difficultyLabel" style="-fx-text-fill: #e0e1dd;                           -fx-font-size: 18px;                           -fx-font-weight: bold;" text="Normal" />
 
-            <Region HBox.hgrow="ALWAYS"/>
+            <Region HBox.hgrow="ALWAYS" />
 
             <!-- LIVES -->
-            <Label text="Lives:"
-                   style="-fx-text-fill: #e0e1dd;
-                          -fx-font-size: 18px;" />
+            <Label style="-fx-text-fill: #e0e1dd;                           -fx-font-size: 18px;" text="Lives:" />
 
-            <Label fx:id="livesLabel"
-                   text="❤️❤️❤️"
-                   style="-fx-text-fill: red;
-                          -fx-font-size: 22px;" />
+            <Label fx:id="livesLabel" style="-fx-text-fill: red; -fx-font-size: 24px;" text="♥♥♥" />
 
-            <Region HBox.hgrow="ALWAYS"/>
+            <Region HBox.hgrow="ALWAYS" />
 
             <!-- Score -->
-            <Label text="Score:"
-                   style="-fx-text-fill: #e0e1dd;
-                          -fx-font-size: 18px;" />
+            <Label style="-fx-text-fill: #e0e1dd;                           -fx-font-size: 18px;" text="Score:" />
 
-            <Label fx:id="Highscore_Points"
-                   text="0"
-                   style="-fx-text-fill: #fca311;
-                          -fx-font-size: 18px;
-                          -fx-font-weight: bold;" />
+            <Label fx:id="Highscore_Points" style="-fx-text-fill: #fca311;                           -fx-font-size: 18px;                           -fx-font-weight: bold;" text="0" />
         </HBox>
     </top>
 
     <!-- ================= LEFT INFO ================= -->
     <left>
-        <VBox alignment="CENTER"
-              spacing="12"
-              style="-fx-padding: 20;">
+        <VBox alignment="CENTER" spacing="12" style="-fx-padding: 20;">
 
-            <Label text="QUESTION"
-                   style="-fx-text-fill: #778da9;
-                          -fx-font-size: 14px;" />
+            <Label style="-fx-text-fill: #778da9;                           -fx-font-size: 14px;" text="QUESTION" />
 
-            <Label fx:id="questionLabel"
-                   text="1 / 10"
-                   style="-fx-text-fill: white;
-                          -fx-font-size: 26px;
-                          -fx-font-weight: bold;" />
+            <Label fx:id="questionLabel" style="-fx-text-fill: white;                           -fx-font-size: 26px;                           -fx-font-weight: bold;" text="1 / 10" />
         </VBox>
     </left>
 
     <!-- ================= RIGHT INFO ================= -->
     <right>
-        <VBox alignment="CENTER"
-              spacing="12"
-              style="-fx-padding: 20;">
+        <VBox alignment="CENTER" spacing="12" style="-fx-padding: 20;">
 
-            <Label text="TIME"
-                   style="-fx-text-fill: #778da9;
-                          -fx-font-size: 14px;" />
+            <Label style="-fx-text-fill: #778da9;                           -fx-font-size: 14px;" text="TIME" />
 
-            <Label fx:id="timeLabel"
-                   text="30s"
-                   style="-fx-text-fill: #fca311;
-                          -fx-font-size: 26px;
-                          -fx-font-weight: bold;" />
+            <Label fx:id="timeLabel" style="-fx-text-fill: #fca311;                           -fx-font-size: 26px;                           -fx-font-weight: bold;" text="30s" />
         </VBox>
     </right>
 
     <!-- ================= CENTER ================= -->
     <center>
-        <VBox alignment="CENTER"
-              spacing="30">
+        <VBox alignment="CENTER" spacing="30">
 
-            <Label text="WHAT FLAG IS THIS?"
-                   style="-fx-text-fill: white;
-                          -fx-font-size: 34px;
-                          -fx-font-weight: bold;" />
+            <Label style="-fx-text-fill: white;                           -fx-font-size: 34px;                           -fx-font-weight: bold;" text="WHAT FLAG IS THIS?" />
 
-            <ImageView fx:id="flagImageView"
-                       fitHeight="320"
-                       preserveRatio="true" />
+            <ImageView fx:id="flagImageView" fitHeight="320" preserveRatio="true" />
         </VBox>
     </center>
 
     <!-- ================= ANSWERS ================= -->
     <bottom>
-        <HBox alignment="CENTER"
-              spacing="50"
-              style="-fx-padding: 30;">
+        <HBox alignment="CENTER" spacing="50" style="-fx-padding: 30;">
 
             <!-- LEFT -->
             <VBox spacing="20">
-                <Button fx:id="buttonA"
-                        onAction="#handleAnswer"
-                        prefWidth="300"
-                        prefHeight="90"
-                        styleClass="answer-box"
-                        style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                <Button fx:id="buttonA" onAction="#handleAnswer" prefHeight="90" prefWidth="300" style="-fx-font-size: 24px; -fx-font-weight: bold;" styleClass="answer-box" />
 
-                <Button fx:id="buttonC"
-                        onAction="#handleAnswer"
-                        prefWidth="300"
-                        prefHeight="90"
-                        styleClass="answer-box"
-                        style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                <Button fx:id="buttonC" onAction="#handleAnswer" prefHeight="90" prefWidth="300" style="-fx-font-size: 24px; -fx-font-weight: bold;" styleClass="answer-box" />
             </VBox>
 
             <!-- RIGHT -->
             <VBox spacing="20">
-                <Button fx:id="buttonB"
-                        onAction="#handleAnswer"
-                        prefWidth="300"
-                        prefHeight="90"
-                        styleClass="answer-box"
-                        style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                <Button fx:id="buttonB" onAction="#handleAnswer" prefHeight="90" prefWidth="300" style="-fx-font-size: 24px; -fx-font-weight: bold;" styleClass="answer-box" />
 
-                <Button fx:id="buttonD"
-                        onAction="#handleAnswer"
-                        prefWidth="300"
-                        prefHeight="90"
-                        styleClass="answer-box"
-                        style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                <Button fx:id="buttonD" onAction="#handleAnswer" prefHeight="90" prefWidth="300" style="-fx-font-size: 24px; -fx-font-weight: bold;" styleClass="answer-box" />
             </VBox>
 
         </HBox>

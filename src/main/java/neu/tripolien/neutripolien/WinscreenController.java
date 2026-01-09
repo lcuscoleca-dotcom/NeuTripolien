@@ -8,6 +8,7 @@
         @FXML private Label scoreLabel;
         @FXML private Label answerLabel;
         @FXML private Label difficultyLabel;
+        @FXML private Label WinScreenText;
 
         @FXML
         public void initialize() {
@@ -16,6 +17,13 @@
                     GameState.correctAnswers + " / " + GameState.questionCount
             );
             difficultyLabel.setText(GameState.difficulty);
+
+            //Call username from GameState
+            String name = GameState.username;
+            if (name == null || name.isEmpty()) {
+                name = "You";
+            }
+            WinScreenText.setText(name + " won this round 🎉");
         }
 
         @FXML
