@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.AudioClip;
 import javafx.util.Duration;
 
 import java.util.*;
@@ -30,6 +31,7 @@ public class PlayscreenController {
     private final Random random = new Random();
     private List<Flags> usedFlags;
 
+
     private int timeLeft;
     private Timeline timer;
 
@@ -51,8 +53,10 @@ public class PlayscreenController {
         if (clicked.getText().equals(correctFlag.getCountryName())) {
             GameState.score += getPointsForDifficulty();
             GameState.correctAnswers++;
+            SoundManager.playCorrect();
         } else {
             GameState.lives--;
+            SoundManager.playWrong();
         }
 
         GameState.currentQuestion++;
