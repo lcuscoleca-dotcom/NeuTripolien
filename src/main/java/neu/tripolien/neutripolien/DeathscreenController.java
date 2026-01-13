@@ -28,7 +28,7 @@ public class DeathscreenController {
         if (name == null || name.isEmpty()) {
             name = "You";
         }
-        resultLabel.setText(name + " failed this round 😢");
+        resultLabel.setText("Sorry " + name + ", you failed this round 😢");
     }
 
     @FXML

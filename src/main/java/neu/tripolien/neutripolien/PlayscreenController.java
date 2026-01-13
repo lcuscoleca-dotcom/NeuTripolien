@@ -241,7 +241,7 @@ public class PlayscreenController {
         // Restliches Europa
         allFlags.add(new Flags("Albanien", "/neu/tripolien/flags/al.png", "Hard"));
         allFlags.add(new Flags("Andorra", "/neu/tripolien/flags/ad.png", "Hard"));
-        allFlags.add(new Flags("Bosnien und Herzegowina", "/neu/tripolien/flags/ba.png", "Hard"));
+        allFlags.add(new Flags("BiH", "/neu/tripolien/flags/ba.png", "Hard"));
         allFlags.add(new Flags("Estland", "/neu/tripolien/flags/ee.png", "Hard"));
         allFlags.add(new Flags("Lettland", "/neu/tripolien/flags/lv.png", "Hard"));
         allFlags.add(new Flags("Litauen", "/neu/tripolien/flags/lt.png", "Hard"));
@@ -278,7 +278,7 @@ public class PlayscreenController {
         allFlags.add(new Flags("Kap Verde", "/neu/tripolien/flags/cv.png", "Hard"));
         allFlags.add(new Flags("Komoren", "/neu/tripolien/flags/km.png", "Hard"));
         allFlags.add(new Flags("Kongo", "/neu/tripolien/flags/cg.png", "Hard"));
-        allFlags.add(new Flags("Demokratische Republik Kongo", "/neu/tripolien/flags/cd.png", "Hard"));
+        allFlags.add(new Flags("DR Kongo", "/neu/tripolien/flags/cd.png", "Hard"));
         allFlags.add(new Flags("Lesotho", "/neu/tripolien/flags/ls.png", "Hard"));
         allFlags.add(new Flags("Liberia", "/neu/tripolien/flags/lr.png", "Hard"));
         allFlags.add(new Flags("Libyen", "/neu/tripolien/flags/ly.png", "Hard"));
@@ -293,7 +293,7 @@ public class PlayscreenController {
         allFlags.add(new Flags("Niger", "/neu/tripolien/flags/ne.png", "Hard"));
         allFlags.add(new Flags("Ruanda", "/neu/tripolien/flags/rw.png", "Hard"));
         allFlags.add(new Flags("Sambia", "/neu/tripolien/flags/zm.png", "Hard"));
-        allFlags.add(new Flags("São Tomé und Príncipe", "/neu/tripolien/flags/st.png", "Hard"));
+        allFlags.add(new Flags("São Tomé P.", "/neu/tripolien/flags/st.png", "Hard"));
         allFlags.add(new Flags("Senegal", "/neu/tripolien/flags/sn.png", "Hard"));
         allFlags.add(new Flags("Seychellen", "/neu/tripolien/flags/sc.png", "Hard"));
         allFlags.add(new Flags("Sierra Leone", "/neu/tripolien/flags/sl.png", "Hard"));
@@ -306,7 +306,7 @@ public class PlayscreenController {
         allFlags.add(new Flags("Tschad", "/neu/tripolien/flags/td.png", "Hard"));
         allFlags.add(new Flags("Tunesien", "/neu/tripolien/flags/tn.png", "Hard"));
         allFlags.add(new Flags("Uganda", "/neu/tripolien/flags/ug.png", "Hard"));
-        allFlags.add(new Flags("Zentralafrikanische Republik", "/neu/tripolien/flags/cf.png", "Hard"));
+        allFlags.add(new Flags("Zentralafr. R.", "/neu/tripolien/flags/cf.png", "Hard"));
 
         // Asien
         allFlags.add(new Flags("Afghanistan", "/neu/tripolien/flags/af.png", "Hard"));
@@ -345,13 +345,13 @@ public class PlayscreenController {
         allFlags.add(new Flags("Usbekistan", "/neu/tripolien/flags/uz.png", "Hard"));
 
         // Nord- und Mittelamerika
-        allFlags.add(new Flags("Antigua und Barbuda", "/neu/tripolien/flags/ag.png", "Hard"));
+        allFlags.add(new Flags("Antigua & B.", "/neu/tripolien/flags/ag.png", "Hard"));
         allFlags.add(new Flags("Bahamas", "/neu/tripolien/flags/bs.png", "Hard"));
         allFlags.add(new Flags("Barbados", "/neu/tripolien/flags/bb.png", "Hard"));
         allFlags.add(new Flags("Belize", "/neu/tripolien/flags/bz.png", "Hard"));
         allFlags.add(new Flags("Costa Rica", "/neu/tripolien/flags/cr.png", "Hard"));
         allFlags.add(new Flags("Dominica", "/neu/tripolien/flags/dm.png", "Hard"));
-        allFlags.add(new Flags("Dominikanische Republik", "/neu/tripolien/flags/do.png", "Hard"));
+        allFlags.add(new Flags("Dom. R.", "/neu/tripolien/flags/do.png", "Hard"));
         allFlags.add(new Flags("El Salvador", "/neu/tripolien/flags/sv.png", "Hard"));
         allFlags.add(new Flags("Grenada", "/neu/tripolien/flags/gd.png", "Hard"));
         allFlags.add(new Flags("Guatemala", "/neu/tripolien/flags/gt.png", "Hard"));
@@ -361,10 +361,10 @@ public class PlayscreenController {
         allFlags.add(new Flags("Kuba", "/neu/tripolien/flags/cu.png", "Hard"));
         allFlags.add(new Flags("Nicaragua", "/neu/tripolien/flags/ni.png", "Hard"));
         allFlags.add(new Flags("Panama", "/neu/tripolien/flags/pa.png", "Hard"));
-        allFlags.add(new Flags("St. Kitts und Nevis", "/neu/tripolien/flags/kn.png", "Hard"));
+        allFlags.add(new Flags("St. Kitts & N.", "/neu/tripolien/flags/kn.png", "Hard"));
         allFlags.add(new Flags("St. Lucia", "/neu/tripolien/flags/lc.png", "Hard"));
-        allFlags.add(new Flags("St. Vincent und die Grenadinen", "/neu/tripolien/flags/vc.png", "Hard"));
-        allFlags.add(new Flags("Trinidad und Tobago", "/neu/tripolien/flags/tt.png", "Hard"));
+        allFlags.add(new Flags("SVG", "/neu/tripolien/flags/vc.png", "Hard"));
+        allFlags.add(new Flags("Trinidad & To.", "/neu/tripolien/flags/tt.png", "Hard"));
 
         // Südamerika
         allFlags.add(new Flags("Bolivien", "/neu/tripolien/flags/bo.png", "Hard"));

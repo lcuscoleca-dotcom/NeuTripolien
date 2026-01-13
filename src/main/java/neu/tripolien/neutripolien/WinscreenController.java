@@ -23,7 +23,7 @@
             if (name == null || name.isEmpty()) {
                 name = "You";
             }
-            WinScreenText.setText(name + " won this round 🎉");
+            WinScreenText.setText("Good job " + name + ", you won this round 🎉");
         }
 
         @FXML

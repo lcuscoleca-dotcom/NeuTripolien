@@ -14,19 +14,6 @@
                 -fx-background-repeat: no-repeat;
             ">
 
-    <!-- MENU BAR -->
-    <top>
-        <MenuBar>
-            <menus>
-                <Menu text="Settings">
-                    <items>
-                        <MenuItem text="About"/>
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
-    </top>
-
     <!-- CENTER CONTENT -->
     <center>
         <VBox alignment="CENTER" spacing="40" style="-fx-padding: 50;">
@@ -57,6 +44,7 @@
                            style="
                              -fx-font-size: 16px;
                              -fx-font-weight: bold;
+                             -fx-alignment: CENTER; /* Text zentriert */
                            "/>
             </VBox>
 
