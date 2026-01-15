@@ -28,6 +28,7 @@
 
         @FXML
         private void onMenuClicked() {
+            SoundManager.playClick();
             GameState.reset();
             SceneManager.switchScene("MainMenuScreen.fxml");
         }

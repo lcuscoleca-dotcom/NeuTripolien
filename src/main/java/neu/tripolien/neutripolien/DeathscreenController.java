@@ -33,18 +33,21 @@ public class DeathscreenController {
 
     @FXML
     private void onRetryClicked() {
+        SoundManager.playClick();
         GameState.reset();
         SceneManager.switchScene("PlayScreen.fxml");
     }
 
     @FXML
     private void onMenuClicked() {
+        SoundManager.playClick();
         GameState.reset();
         SceneManager.switchScene("MainMenuScreen.fxml");
     }
 
     @FXML
     private void onExitClicked() {
+        SoundManager.playClick();
         Platform.exit();
         System.exit(0);
     }

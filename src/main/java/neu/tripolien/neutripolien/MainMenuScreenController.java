@@ -43,10 +43,17 @@ public class MainMenuScreenController {
                 15, 30, 45, 60
         );
         timeLimitChoiceBox.setValue(30);
+
+        soundCheckBox.setSelected(true);
+        GameState.soundEnabled = true;
     }
 
     @FXML
     private void onPlayClicked() {
+
+        //play Sound wenn nicht deaktiviert
+        GameState.soundEnabled = soundCheckBox.isSelected();
+        SoundManager.playClick();
 
         // SETTINGS SPEICHERN
         GameState.difficulty = difficultyChoiceBox.getValue();
@@ -61,6 +68,7 @@ public class MainMenuScreenController {
 
     @FXML
     private void onExitClicked() {
+        SoundManager.playClick();
         Platform.exit();
         System.exit(0);
     }
