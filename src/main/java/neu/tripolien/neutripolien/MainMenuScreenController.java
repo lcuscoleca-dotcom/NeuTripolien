@@ -46,7 +46,20 @@ public class MainMenuScreenController {
 
         soundCheckBox.setSelected(true);
         GameState.soundEnabled = true;
+
+        // ⬇⬇⬇ ENTER = PLAY ⬇⬇⬇
+        Platform.runLater(() -> {
+            difficultyChoiceBox.getScene().setOnKeyPressed(event -> {
+                switch (event.getCode()) {
+                    case ENTER -> onPlayClicked();
+                }
+            });
+        });
     }
+
+
+
+
 
     @FXML
     private void onPlayClicked() {

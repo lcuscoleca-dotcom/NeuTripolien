@@ -7,9 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.media.AudioClip;
 import javafx.util.Duration;
-
 import java.util.*;
 
 public class PlayscreenController {
@@ -20,7 +18,6 @@ public class PlayscreenController {
     @FXML private Label timeLabel;
     @FXML private Label difficultyLabel;
     @FXML private ImageView flagImageView;
-
     @FXML private Button buttonA;
     @FXML private Button buttonB;
     @FXML private Button buttonC;
@@ -30,8 +27,6 @@ public class PlayscreenController {
     private Flags correctFlag;
     private final Random random = new Random();
     private List<Flags> usedFlags;
-
-
     private int timeLeft;
     private Timeline timer;
 
@@ -49,7 +44,6 @@ public class PlayscreenController {
     @FXML
     private void handleAnswer(javafx.event.ActionEvent event) {
         Button clicked = (Button) event.getSource();
-
         if (clicked.getText().equals(correctFlag.getCountryName())) {
             GameState.score += getPointsForDifficulty();
             GameState.correctAnswers++;
@@ -58,21 +52,16 @@ public class PlayscreenController {
             GameState.lives--;
             SoundManager.playWrong();
         }
-
         GameState.currentQuestion++;
-
         stopTimer();
-
         if (GameState.lives <= 0) {
             SceneManager.switchScene("Deathscreen.fxml");
             return;
         }
-
         if (GameState.currentQuestion >= GameState.questionCount) {
             SceneManager.switchScene("WinScreen.fxml");
             return;
         }
-
         loadNewQuestion();
         startTimer();
         updateUI();
@@ -84,7 +73,6 @@ public class PlayscreenController {
         timer = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
             timeLeft--;
             timeLabel.setText(timeLeft + "s");
-
             if (timeLeft <= 0) {
                 stopTimer();
                 GameState.lives--;
@@ -97,7 +85,6 @@ public class PlayscreenController {
 
     private void handleTimeout() {
         GameState.currentQuestion++;
-
         if (GameState.lives <= 0) {
             SceneManager.switchScene("Deathscreen.fxml");
         } else {
@@ -113,17 +100,13 @@ public class PlayscreenController {
 
     // 🧠 QUIZ LOGIK
     private void loadNewQuestion() {
-        // Erstelle Liste mit noch nicht verwendeten Flaggen
         List<Flags> availableFlags = new ArrayList<>(flags);
         availableFlags.removeAll(usedFlags);
-
-        // Falls alle Flaggen schon gezeigt wurden, starte von vorne
         if (availableFlags.isEmpty()) {
             usedFlags.clear();
             availableFlags = new ArrayList<>(flags);
         }
 
-        // Wähle zufällige Flagge aus den verfügbaren
         correctFlag = availableFlags.get(random.nextInt(availableFlags.size()));
         usedFlags.add(correctFlag);
 
@@ -133,12 +116,10 @@ public class PlayscreenController {
 
         List<Flags> answers = new ArrayList<>();
         answers.add(correctFlag);
-
         while (answers.size() < 4) {
             Flags f = flags.get(random.nextInt(flags.size()));
             if (!answers.contains(f)) answers.add(f);
         }
-
         Collections.shuffle(answers);
 
         buttonA.setText(answers.get(0).getCountryName());
@@ -150,13 +131,10 @@ public class PlayscreenController {
     private void updateUI() {
         Highscore_Points.setText(String.valueOf(GameState.score));
         difficultyLabel.setText(GameState.difficulty);
-        questionLabel.setText(
-                (GameState.currentQuestion + 1) + " / " + GameState.questionCount
-        );
+        questionLabel.setText((GameState.currentQuestion + 1) + " / " + GameState.questionCount);
         timeLabel.setText(timeLeft + "s");
         updateLives();
     }
-
 
     private int getPointsForDifficulty() {
         return switch (GameState.difficulty) {
@@ -177,8 +155,7 @@ public class PlayscreenController {
     private void loadFlags() {
         List<Flags> allFlags = new ArrayList<>();
 
-
-                // ========== EASY (20 sehr bekannte Länder) ==========
+        // ========== EASY (20 sehr bekannte Länder) ==========
         allFlags.add(new Flags("Deutschland", "/neu/tripolien/flags/de.png", "Easy"));
         allFlags.add(new Flags("Frankreich", "/neu/tripolien/flags/fr.png", "Easy"));
         allFlags.add(new Flags("Italien", "/neu/tripolien/flags/it.png", "Easy"));
@@ -198,8 +175,7 @@ public class PlayscreenController {
         allFlags.add(new Flags("Türkei", "/neu/tripolien/flags/tr.png", "Easy"));
         allFlags.add(new Flags("Südafrika", "/neu/tripolien/flags/za.png", "Easy"));
         allFlags.add(new Flags("Ägypten", "/neu/tripolien/flags/eg.png", "Easy"));
-        allFlags.add(new Flags("Griechenland", "/neu/tripolien/flags/gr.png", "Easy"));
-
+        allFlags.add(new Flags("Griechenland", "/neu/tripolien/flags/gr.png", "Easy"));;
         // ========== NORMAL (Europa + größere bekannte Länder) ==========
         // Europa
         allFlags.add(new Flags("Österreich", "/neu/tripolien/flags/at.png", "Normal"));
@@ -398,8 +374,7 @@ public class PlayscreenController {
                         return f.getDifficulty().equals("Easy");
                     } else if (GameState.difficulty.equals("Normal")) {
                         return f.getDifficulty().equals("Easy") || f.getDifficulty().equals("Normal");
-                    } else {
-                        // Hard = alle Flaggen
+                    } else { // Hard
                         return true;
                     }
                 })
@@ -409,5 +384,4 @@ public class PlayscreenController {
     private void updateLives() {
         livesLabel.setText("♥".repeat(GameState.lives));
     }
-
 }
