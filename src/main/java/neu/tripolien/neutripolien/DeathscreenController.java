@@ -51,5 +51,4 @@ public class DeathscreenController {
         Platform.exit();
         System.exit(0);
     }
-
 }

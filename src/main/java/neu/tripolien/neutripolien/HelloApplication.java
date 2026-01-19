@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
+//Erbt von Basisklasse "Application" für Java FX
 public class HelloApplication extends Application {
 
     @Override
@@ -22,7 +23,6 @@ public class HelloApplication extends Application {
         // 🔒 IMMER FULLSCREEN (einmalig)
         stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
-        stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
 
         stage.show();
     }

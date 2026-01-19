@@ -16,6 +16,7 @@ public class GameState {
     public static boolean soundEnabled = true;
     public static boolean hintsEnabled = true;
 
+    // Setzt Setting auf default zurück
     public static void reset() {
         score = 0;
         lives = switch (difficulty) {

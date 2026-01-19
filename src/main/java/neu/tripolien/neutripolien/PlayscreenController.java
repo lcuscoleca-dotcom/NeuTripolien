@@ -368,6 +368,7 @@ public class PlayscreenController {
         allFlags.add(new Flags("Tuvalu", "/neu/tripolien/flags/tv.png", "Hard"));
         allFlags.add(new Flags("Vanuatu", "/neu/tripolien/flags/vu.png", "Hard"));
 
+        //
         flags = allFlags.stream()
                 .filter(f -> {
                     if (GameState.difficulty.equals("Easy")) {
