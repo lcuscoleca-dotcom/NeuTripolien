@@ -368,7 +368,7 @@ public class PlayscreenController {
         allFlags.add(new Flags("Tuvalu", "/neu/tripolien/flags/tv.png", "Hard"));
         allFlags.add(new Flags("Vanuatu", "/neu/tripolien/flags/vu.png", "Hard"));
 
-        //Jede Flagge läuft zuerst durch den Filter und wird ggf dann zur List hinzugefügt
+        //Jede Flagge läuft zuerst durch den Filter und wird ggf dann zur List hinzugefügt->bessere performance
         flags = allFlags.stream()
                 .filter(f -> {
                     if (GameState.difficulty.equals("Easy")) {
