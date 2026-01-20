@@ -82,16 +82,7 @@
                 </HBox>
 
                 <!-- Hints -->
-                <HBox spacing="24" alignment="CENTER">
-                    <Label text="Hints 💡"
-                           style="-fx-text-fill: #778da9; -fx-font-size: 22px;"
-                           prefWidth="180"/>
-                    <CheckBox fx:id="hintsCheckBox"
-                              text="Allow hints"
-                              selected="true"
-                              prefWidth="220"
-                              style="-fx-text-fill: #e0e1dd; -fx-font-size: 18px;"/>
-                </HBox>
+
 
             </VBox>
         </VBox>

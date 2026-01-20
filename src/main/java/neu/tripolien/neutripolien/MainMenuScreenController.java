@@ -19,8 +19,8 @@ public class MainMenuScreenController {
     @FXML
     private CheckBox soundCheckBox;
 
-    @FXML
-    private CheckBox hintsCheckBox;
+    //@FXML
+    //private CheckBox hintsCheckBox;
 
     // Wird AUTOMATISCH beim Laden des FXML aufgerufen
     @FXML
@@ -73,7 +73,7 @@ public class MainMenuScreenController {
         GameState.questionCount = questionCountChoiceBox.getValue();
         GameState.timeLimit = timeLimitChoiceBox.getValue();
         GameState.soundEnabled = soundCheckBox.isSelected();
-        GameState.hintsEnabled = hintsCheckBox.isSelected();
+        //GameState.hintsEnabled = hintsCheckBox.isSelected();
 
         GameState.reset();
         SceneManager.switchScene("PlayScreen.fxml");
