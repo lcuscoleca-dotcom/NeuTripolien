@@ -33,7 +33,7 @@ public class SceneManager {
                     SceneManager.class.getResource(fxml)
             );
 
-            // 🔥 Nur Root tauschen → absolut flackerfrei
+            // Nur Root tauschen → absolut flackerfrei
             stage.getScene().setRoot(root);
 
         } catch (Exception e) {

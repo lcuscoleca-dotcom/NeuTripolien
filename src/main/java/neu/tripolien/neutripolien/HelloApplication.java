@@ -20,7 +20,7 @@ public class HelloApplication extends Application {
 
         stage.setTitle("Neu Tripolien!");
 
-        // 🔒 IMMER FULLSCREEN (einmalig)
+        //  IMMER FULLSCREEN (einmalig)
         stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
 

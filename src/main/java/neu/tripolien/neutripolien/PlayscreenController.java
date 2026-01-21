@@ -40,7 +40,7 @@ public class PlayscreenController {
         updateUI();
     }
 
-    // 🔘 EIN Handler für alle Buttons
+    //  EIN Handler für alle Buttons
     @FXML
     private void handleAnswer(javafx.event.ActionEvent event) {
         Button clicked = (Button) event.getSource();
@@ -98,7 +98,7 @@ public class PlayscreenController {
         if (timer != null) timer.stop();
     }
 
-    // 🧠 QUIZ LOGIK
+    //  QUIZ LOGIK
     private void loadNewQuestion() {
         List<Flags> availableFlags = new ArrayList<>(flags);
         availableFlags.removeAll(usedFlags);
